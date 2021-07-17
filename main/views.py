@@ -63,7 +63,7 @@ def add_book(request):
         book_created = Book.objects.create(title = request.POST['title'], description = request.POST['description'], uploaded_by = user)
         book_created.users_who_like.add(user)
         request.session['book_created'] = book_created
-    return redirect(f'/books/{book_created.id}')
+    	return redirect(f'/books/{book_created.id}')
 
 def show_book(request, book_id):
     context = {
